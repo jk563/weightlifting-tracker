@@ -1,0 +1,18 @@
+init: 
+	terraform init
+
+plan: init
+	terraform plan
+
+apply: init
+	terraform apply
+
+test_get: refresh
+  terraform output -json \
+    | jq '.get_lifts_url.value' \
+    | xargs curl \
+    | jq
+
+refresh: init
+	terraform refresh
+

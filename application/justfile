@@ -1,0 +1,19 @@
+test: vet 
+
+package: build
+	zip lifts.zip bootstrap;
+
+build: clean test
+	CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -tags lambda.norpc -trimpath -o bootstrap main.go
+
+lint: fmt
+	revive -formatter friendly -set_exit_status ./...
+
+fmt:
+	go fmt ./...
+
+vet: lint
+	go vet ./...
+
+clean:
+	rm -f *.zip main lifts
