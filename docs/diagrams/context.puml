@@ -1,0 +1,15 @@
+@startuml
+
+' Pull in built-in C4 plugin for this diagram level
+!include <C4/C4_Context>
+
+' Import shared entities outside the scope of this diagram
+!include shared/user.puml
+
+' Define entities specific to this diagram
+System(tracker, "Weightlifting Tracker", "Allows users to access future workouts and record workouts")
+
+' Define relationships specific to this diagram
+Rel(user, tracker, "Views or completes next workout using")
+
+@enduml

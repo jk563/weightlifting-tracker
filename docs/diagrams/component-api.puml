@@ -1,0 +1,22 @@
+@startuml
+
+' Pull in built-in C4 plugin for this diagram level
+!include <C4/C4_Component>
+
+' Import shared entities outside the scope of this diagram
+!include shared/user.puml
+!include shared/database.puml
+
+' Define entities specific to this diagram
+Container_Boundary(apiBoundary, "API") {
+  Component(getWorkout, "Get Workout Function", "Go, Lambda", "Provides user with the next workout to complete")
+  Component(completeWorkout, "Complete Workout Function", "Go, Lambda", "Records the results of a workout")
+}
+
+' Define relationships specific to this diagram
+Rel(user, getWorkout, "Views workout using", "HTTPS/json")
+Rel(user, completeWorkout, "Completes next  workout using", "HTTPS/json")
+Rel(getWorkout, workoutDatabase, "Read from", "HTTPS")
+Rel(completeWorkout, workoutDatabase, "Write to", "HTTPS")
+
+@enduml

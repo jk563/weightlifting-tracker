@@ -1,0 +1,5 @@
+@startuml
+
+Person(user, "User", "A person keeping track of weightlifting workouts") 
+
+@enduml

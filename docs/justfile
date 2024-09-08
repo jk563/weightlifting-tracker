@@ -1,0 +1,5 @@
+diagrams:
+  plantuml -o ../assets/diagrams -tsvg diagrams/*.puml
+ 
+clean:
+  rm -rf assets/diagrams

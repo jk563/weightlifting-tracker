@@ -1,0 +1,20 @@
+@startuml
+
+' Pull in built-in C4 plugin for this diagram level
+!include <C4/C4_Container>
+
+' Import shared entities outside the scope of this diagram
+!include shared/user.puml
+
+' Define entities specific to this diagram
+System_Boundary(trackerBoundary, "Weightlifting Tracker") {
+  Container(workoutApi, "API", "Go", "Provides API access to workout data")
+  !include shared/database.puml
+}
+
+' Define relationships specific to this diagram
+Rel(user, workoutApi, "Views or completes next workout using")
+Rel(workoutApi, workoutDatabase, "Read from and writes to")
+
+@enduml
+

@@ -1,0 +1,5 @@
+@startuml
+
+ContainerDb(workoutDatabase, "Database", "DynamoDB" , "Stores workout data")
+
+@enduml
