@@ -1,0 +1,30 @@
+@startuml
+
+' Pull in built-in C4 plugin for this diagram level
+!include <C4/C4_Deployment>
+
+!include <awslib14/AWSCommon>
+!include <awslib14/Groups/AWSCloud>
+!include <awslib14/Groups/AWSAccount>
+!include <awslib14/Groups/Region>
+!include <awslib14/Compute/LambdaLambdaFunction>
+!include <awslib14/Database/DynamoDB>
+
+' Import shared entities outside the scope of this diagram
+
+' Define entities specific to this diagram
+AWSCloudGroup(aws) {
+  AWSAccountGroup(account, "Account: jamiekelly-root") {
+    RegionGroup(eu-west-2, "eu-west-2") {
+      LambdaLambdaFunction(getWorkout, "Get Workout", "")
+      LambdaLambdaFunction(completeWorkout, "Complete Workout", "")
+      DynamoDB(db, "lifts", "")
+    }
+  }
+}
+
+' Define relationships specific to this diagram
+getWorkout --> db
+completeWorkout --> db
+
+@enduml
