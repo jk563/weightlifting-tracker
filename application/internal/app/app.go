@@ -14,8 +14,8 @@ type App struct {
 	Repo repository.Port
 }
 
-var workoutA = []model.Lift{"Bench Press", "Barbell Row"}
-var workoutB = []model.Lift{"Overhead Press", "Bicep Curl"}
+var workoutA = []model.Lift{"Bench Press", "Barbell Row", "Squat"}
+var workoutB = []model.Lift{"Overhead Press", "Bicep Curl", "Deadlift"}
 
 // GetNextWorkout retrieves the next workout to do
 func (app App) GetNextWorkout() model.Workout {
@@ -30,12 +30,14 @@ func (app App) GetNextWorkout() model.Workout {
 		exercises = []model.Exercise{
 			{Lift: model.BenchPress},
 			{Lift: model.BarbellRow},
+			{Lift: model.Squat},
 		}
 	} else {
 		log.Info().Str("workout", "workoutB").Msg("Next workout")
 		exercises = []model.Exercise{
 			{Lift: model.OverheadPress},
 			{Lift: model.BicepCurl},
+			{Lift: model.Deadlift},
 		}
 	}
 
