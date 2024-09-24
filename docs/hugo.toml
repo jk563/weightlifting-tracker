@@ -1,0 +1,4 @@
+baseURL = 'https://weightlifting-tracker.jamiekelly.com/'
+languageCode = 'en-gb'
+title = 'Weightlifting Tracker'
+theme = 'jamiekelly-hugo-theme'

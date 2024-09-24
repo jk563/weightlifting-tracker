@@ -1,0 +1,3 @@
+[submodule "docs/themes/jamiekelly-hugo-theme"]
+	path = docs/themes/jamiekelly-hugo-theme
+	url = git@github.com:jk563/jamiekelly-hugo-theme.git
