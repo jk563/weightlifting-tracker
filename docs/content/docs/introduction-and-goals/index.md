@@ -17,8 +17,8 @@ The Weightlifting Tracker records successful workouts, and computes the next wor
 | ID    | Quality     | Description |
 | :---: | ---         | ---         |
 | Q1    | Correctness | The correct workout details will be returned, following an incremental progression with weight removed as the time between successful workouts increases |
-| Q1    | Cost        | The solution should cost a minimal amount to develop and run, as it does not generate any revenue |
-| Q2    | Clarity     | The system may go long periods of time without being worked on, it should be easy to come in fresh and understand it |
+| Q2    | Cost        | The solution should cost a minimal amount to develop and run, as it does not generate any revenue |
+| Q3    | Clarity     | The system may go long periods of time without being worked on, it should be easy to come in fresh and understand it |
 
 ## Stakeholders
 | Role       | Name        | Expectations |
