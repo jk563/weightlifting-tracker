@@ -1,0 +1,10 @@
+---
+title: Weightlifting Tracker
+documentclass: scrreport
+toc: yes
+top-level-division: chapter
+geometry:
+  - left=20mm
+  - right=20mm
+  - top=10mm
+---

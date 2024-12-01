@@ -2,13 +2,20 @@
 list:
   just -l
 
-# Run a local server with live updates
-local: clean
-  hugo server --disableFastRender --buildDrafts
+# Open documentation
+docs: render
+  open documentation.pdf
+
+# Render PDF
+render: diagrams
+  pandoc \
+   -o documentation.pdf \
+   --metadata-file metadata.yaml \
+   `find . -iname "*.md" | sort`
 
 # Remove generated files
 clean:
-  rm -rf public assets/diagrams
+  rm -rf documentation.pdf assets/diagrams
 
 # Generate PlantUML diagrams
 diagrams:
